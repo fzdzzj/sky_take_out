@@ -101,4 +101,31 @@ public class EmployeeController {
         return Result.success(pageResult);
     }
 
+
+    /**
+     * 启用禁用员工
+     * @param status
+     * @param id
+     * @return
+     */
+    @ApiOperation("启用禁用员工")
+    @PostMapping("/status/{status}")
+    public Result enableOrDisable(@PathVariable Integer status,Long id){
+        log.info("员工状态修改：{}",status);
+        employeeService.enableOrDisable(status,id);
+        return Result.success();
+    }
+    @ApiOperation("回显员工")
+    @GetMapping("/{id}")
+    public Result<Employee> getById(@PathVariable Long id){
+        log.info("员工查询：{}",id);
+        Employee employee=employeeService.getById(id);
+        return Result.success(employee);
+    }
+
+    @PutMapping("/{id}")
+    public Result update(@RequestBody EmployeeDTO dto){
+        return Result.success();
+    }
+
 }
