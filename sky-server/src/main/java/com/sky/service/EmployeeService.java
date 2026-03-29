@@ -41,4 +41,6 @@ public interface EmployeeService {
      * @return
      */
     Employee getById(Long id);
+
+    void update(EmployeeDTO dto);
 }
