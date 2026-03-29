@@ -82,7 +82,7 @@ public class WebMvcConfiguration extends WebMvcConfigurationSupport {
 
         //2.设置自定义的消息对象转换器
         converter.setObjectMapper(new JacksonObjectMapper());
-        //3.将自定义的消息对象转换器设置为优先级最高
+        //3.将自定义的消息对象转换器设置为优先级最高//
         converters.add(0,converter);
     }
 }
