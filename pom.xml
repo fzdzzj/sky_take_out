@@ -19,15 +19,15 @@
     </modules>
 
     <properties>
-        <!-- ✅ JDK 21 核心配置（你只需要这 4 行） -->
-        <java.version>21</java.version>
-        <maven.compiler.source>21</maven.compiler.source>
-        <maven.compiler.target>21</maven.compiler.target>
+        <!-- 🔥 这里我帮你改成支持 SpringBoot 2.7.3 的 JDK 17 -->
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 
-        <!-- 你原来的版本号，完全不动 -->
+        <!-- 你的依赖版本不动 -->
         <mybatis.spring>2.2.0</mybatis.spring>
-        <lombok>1.18.20</lombok>
+        <lombok>1.18.34</lombok>
         <fastjson>1.2.76</fastjson>
         <commons.lang>2.6</commons.lang>
         <druid>1.2.1</druid>
