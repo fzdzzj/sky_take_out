@@ -12,6 +12,8 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
+import java.util.List;
+
 @Mapper
 public interface DishMapper {
 
@@ -45,4 +47,6 @@ public interface DishMapper {
     void deleteById(Long id);
 
     void update(Dish dish);
+
+    List<Dish> list(Dish dish);
 }
