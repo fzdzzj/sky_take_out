@@ -1,6 +1,7 @@
 package com.sky.controller.admin;
 
 import com.sky.result.Result;
+import com.sky.service.ShoppingCartService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
@@ -17,6 +18,8 @@ public class ShopController {
 
     @Autowired
     private RedisTemplate redisTemplate;
+    @Autowired
+    private ShoppingCartService shoppingCartService;
 
     /**
      * 设置店铺营业状态
@@ -37,5 +40,12 @@ public class ShopController {
         Integer status=(Integer) redisTemplate.opsForValue().get(KEY);
         log.info("获取店铺的营业状态为:{}",status==1?"营业中":"打烊");
         return Result.success(status);
+    }
+
+    @DeleteMapping("/clean")
+    @ApiOperation("清空购物车商品")
+    public Result clean(){
+        shoppingCartService.cleanShoppingCart();
+        return Result.success();
     }
 }
