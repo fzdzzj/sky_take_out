@@ -10,4 +10,22 @@
                 #{payStatus}, #{amount}, #{remark}, #{phone}, #{address}, #{consignee},
                 #{estimatedDeliveryTime}, #{deliveryStatus}, #{packAmount}, #{tablewareNumber}, #{tablewareStatus})
     </insert>
+    <update id="update">
+
+    update orders
+    set number = #{number},
+        status = #{status},
+        user_id = #{userId},
+        address_book_id = #{addressBookId},
+        order_time = #{orderTime},
+        checkout_time = #{checkoutTime},
+        pay_method = #{payMethod},
+        pay_status = #{payStatus},
+        amount = #{amount},
+        remark = #{remark},
+        phone = #{phone},
+        address = #{address},
+        consignee = #{consignee},
+        cancel_reason = #{cancelReason},
+    </update>
 </mapper>
